@@ -3,9 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home work 2.6</title>
+    <title>Домашнее задание: CSS-свойства</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef4ff;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 30px;
+        }
+
+        h1 {
+            color: darkblue;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2f6f9f;
+            margin-top: 30px;
+        }
+
+        /* text-color */
+        .title-red {
+            color: #c0392b;
+        }
+
+        /* font-size */
+        .small-text {
+            font-size: 14px;
+        }
+
+        .medium-text {
+            font-size: 18px;
+        }
+
+        .large-text {
+            font-size: 26px;
+        }
+
+        /* text-align */
+        .centered {
+            text-align: center;
+        }
+
+        /* font-weight */
+        .bold-text {
+            font-weight: 700;
+        }
+
+        .example-box {
+            background: #ffffff;
+            border: 1px solid #dbe2f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .hero {
+            /* background-color */
+            background-color: #dfeeff;
+            /* background-image */
+            background-image: url('https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 30px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .blocks {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .block {
+            width: 220px;
+            /* padding */
+            padding: 18px;
+            /* margin */
+            margin: 10px;
+            /* border */
+            border: 3px solid #4a6fa5;
+            background: #f7fbff;
+            border-radius: 10px;
+        }
+
+        .size-demo {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .box-fixed {
+            width: 180px;
+            height: 120px;
+            background: #dff7e8;
+            border: 2px solid #2e8b57;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .box-scroll {
+            width: 220px;
+            height: 110px;
+            background: #fff4d6;
+            border: 2px solid #d4a017;
+            overflow: scroll;
+            padding: 10px;
+        }
+
+        .comment {
+            font-size: 14px;
+            color: #4b5563;
+            background: #f3f6fb;
+            padding: 10px 14px;
+            border-left: 4px solid #4f86c6;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="page">
+        <h1>Домашнее задание: CSS-свойства</h1>
+
+        <section>
+            <h2>Задание 1. Работа с текстовыми свойствами</h2>
+
+            <div class="example-box">
+                <h3 class="title-red">Заголовок с цветом</h3>
+                <p class="small-text">Этот абзац имеет размер шрифта 14px.</p>
+                <p class="medium-text">Этот абзац имеет размер шрифта 18px.</p>
+                <p class="large-text">Этот абзац крупнее, его размер 26px.</p>
+                <h3 class="centered">Заголовок выровнен по центру</h3>
+                <p class="bold-text">Этот абзац жирный, потому что использовано свойство font-weight: 700.</p>
+            </div>
+
+            <div class="comment">
+                Комментарий: свойства <strong>color</strong>, <strong>font-size</strong>, <strong>text-align</strong> и <strong>font-weight</strong> позволяют контролировать внешний вид текста: его цвет, размер, положение и насыщенность.
+            </div>
+        </section>
+
+        <section>
+            <h2>Задание 2. Работа с фоновыми свойствами</h2>
+
+            <div class="hero">
+                <h3>Контейнер с фоновым цветом и изображением</h3>
+                <p>Здесь использованы свойства background-color и background-image.</p>
+            </div>
+
+            <div class="comment">
+                Комментарий: <strong>background-color</strong> задаёт цвет фона, а <strong>background-image</strong> добавляет картинку поверх или вместе с цветом. Через <strong>background-size</strong> можно контролировать размер изображения.
+            </div>
+        </section>
+
+        <section>
+            <h2>Задание 3. Работа с отступами и рамками</h2>
+
+            <div class="blocks">
+                <div class="block">
+                    <h4>Блок 1</h4>
+                    <p>У этого блока есть padding, margin и border.</p>
+                </div>
+                <div class="block">
+                    <h4>Блок 2</h4>
+                    <p>Отступы создают расстояние внутри и снаружи элемента.</p>
+                </div>
+                <div class="block">
+                    <h4>Блок 3</h4>
+                    <p>Рамка отделяет блок от окружающего контента.</p>
+                </div>
+            </div>
+
+            <div class="comment">
+                Комментарий: <strong>padding</strong> — внутренние отступы, <strong>margin</strong> — внешние отступы, <strong>border</strong> — рамка элемента.
+            </div>
+        </section>
+
+        <section>
+            <h2>Задание 4. Работа с размерами и отображением</h2>
+
+            <div class="size-demo">
+                <div class="box-fixed">
+                    В этом блоке задана ширина и высота. Содержимое, которое не помещается, скрывается через overflow: hidden.
+                </div>
+
+                <div class="box-scroll">
+                    В этом блоке задано overflow: scroll. Если содержимое окажется больше блока, появится прокрутка.
+                    Это дополнительный текст, чтобы показать, как работает прокрутка внутри элемента с фиксированными размерами.
+                </div>
+            </div>
+
+            <div class="comment">
+                Комментарий: свойства <strong>width</strong> и <strong>height</strong> задают размер блока, а <strong>overflow</strong> управляет поведением содержимого при переполнении: скрыть, показать полосы прокрутки или отобразить всё.
+            </div>
+        </section>
+    </div>
 </body>
 </html>
