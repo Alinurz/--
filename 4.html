@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Селекторы CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+            margin: 0;
+            padding: 30px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1d3557;
+        }
+
+        h2 {
+            color: #2a6f97;
+            border-bottom: 2px solid #dfeaf5;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        /* Селектор по тегу: все абзацы имеют синий цвет */
+        p {
+            color: blue;
+            font-size: 18px;
+        }
+
+        /* Селектор по классу: элементы с классом "list-item" выделены жирным */
+        .list-item {
+            font-weight: bold;
+            color: #14453b;
+        }
+
+        /* Селектор по ID: заголовок с id="main-title" красный */
+        #main-title {
+            color: red;
+            font-size: 2.2em;
+        }
+
+        /* Пример конфликтующих стилей для демонстрации приоритета */
+        .priority-text {
+            color: green;
+            font-weight: bold;
+        }
+
+        p.priority-text {
+            color: orange;
+        }
+
+        #priority-demo {
+            color: purple;
+            font-size: 22px;
+        }
+
+        .example-box {
+            background: #f7f9fc;
+            border-left: 5px solid #4a90e2;
+            padding: 15px 20px;
+            margin: 16px 0;
+        }
+
+        ul {
+            margin-left: 25px;
+        }
+
+        code {
+            background: #eef2f7;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="main-title">Работа с CSS-селекторами</h1>
+
+        <section>
+            <h2>Задание 1. Базовые селекторы</h2>
+
+            <div class="example-box">
+                <p>Это абзац. Он оформлен селектором по тегу <code>p</code>, поэтому текст становится синим.</p>
+                <p>Второй абзац тоже использует тот же селектор, поэтому выглядит одинаково.</p>
+            </div>
+
+            <div class="example-box">
+                <ul>
+                    <li class="list-item">Элемент списка с классом list-item</li>
+                    <li>Обычный элемент списка</li>
+                    <li class="list-item">Ещё один выделенный элемент</li>
+                </ul>
+                <p>Здесь используется селектор по классу <code>.list-item</code>, поэтому выделенные пункты списка жирные.</p>
+            </div>
+
+            <div class="example-box">
+                <h2 id="section-title">Заголовок с ID</h2>
+                <p>Этот заголовок использует селектор по ID <code>#section-title</code>, поэтому текст окрашен в цвет, заданный для ID.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Задание 2. Приоритет селекторов</h2>
+
+            <div class="example-box">
+                <p class="priority-text" id="priority-demo">Этот абзац одновременно использует тег, класс и ID.</p>
+                <p>Стили конфликтуют:</p>
+                <ul>
+                    <li><code>p</code> задаёт синий или базовый цвет;</li>
+                    <li><code>.priority-text</code> задаёт зелёный цвет;</li>
+                    <li><code>#priority-demo</code> задаёт фиолетовый цвет.</li>
+                </ul>
+                <p>В итоге применяется стиль по ID, потому что приоритет селекторов в CSS следующий: ID &gt; класс &gt; тег.</p>
+            </div>
+
+            <div class="example-box">
+                <p>Если у элемента есть и класс, и ID, то ID имеет больший приоритет. Это объясняет, почему текст выше окрашен в фиолетовый, несмотря на наличие конфликтующих правил.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
